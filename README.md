@@ -26,14 +26,17 @@ Usage: `datastore --help` or `datastore-tools --help`
 datastore <command>
 
 Commands:
-  datastore truncate <kind>  Delete all entities in the specified kind.
+  datastore truncate     Delete all entities.
+  datastore dump <file>  Export all entities.
 
 Options:
   --version        Show version number                                 [boolean]
   --namespace, -n  Specify namespace                                    [string]
+  --kind, -k       Specify kind                                         [string]
   --verbose, -v    Provide more information                            [boolean]
   --help           Show help                                           [boolean]
 
 Examples:
-  datastore truncate Post  Delete all entities in Post kind.
+  datastore truncate        Delete all entities.
+  datastore dump dump.json  Export all entities to dump.json.
 ```

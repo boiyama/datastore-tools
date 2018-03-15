@@ -3,13 +3,17 @@
 var assert = require('assert');
 
 const Datastore = require('@google-cloud/datastore');
-const deleteAllEntities = require('../src/deleteAllEntities');
+const truncate = require('../src/truncate');
 
-describe('Datastore', function() {
+describe('truncate', function() {
   const datastore = new Datastore({});
 
   before(function(done) {
     function createEntities(i, count, entities) {
+      if (entities === undefined) {
+        entities = [];
+      }
+
       if (i === count) {
         return entities;
       }
@@ -36,24 +40,28 @@ describe('Datastore', function() {
     }
 
     function insertEntities(i, count, promises) {
+      if (promises === undefined) {
+        promises = [];
+      }
+
       if (i === count) {
         return promises;
       }
       i++;
 
-      const entities = createEntities(0, 500, []);
+      const entities = createEntities(0, 10);
 
       promises.push(datastore.save(entities));
 
       return insertEntities(i, count, promises);
     }
 
-    Promise.all(insertEntities(0, 2, [])).then(() => done());
+    Promise.all(insertEntities(0, 1)).then(() => done());
   });
 
   it('should delete all entities', function(done) {
-    deleteAllEntities(datastore, null, 'Post', null, [], false).then(total => {
-      assert.strictEqual(total, 1000);
+    truncate(datastore).then(total => {
+      assert.strictEqual(total, 10);
       done();
     });
   });
