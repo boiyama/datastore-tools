@@ -1,0 +1,36 @@
+{
+  "name": "datastore-tools",
+  "description": "Google Cloud Datastore Tools",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": "boiyaa/datastore-tools",
+  "bin": {
+    "datastore": "./bin/datastore.js",
+    "datastore-tools": "./bin/datastore.js"
+  },
+  "scripts": {
+    "lint": "eslint src/ samples/ system-test/",
+    "prettier": "prettier --write bin/*.js src/*.js system-test/*.js",
+    "system-test": "mocha system-test/*.js --no-timeouts"
+  },
+  "files": [
+    "bin/",
+    "src/"
+  ],
+  "dependencies": {
+    "@google-cloud/datastore": "1.3.4",
+    "yargs": "10.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "mocha": "^5.0.0",
+    "power-assert": "^1.4.4",
+    "prettier": "^1.9.2"
+  }
+}
