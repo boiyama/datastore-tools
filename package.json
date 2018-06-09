@@ -21,8 +21,8 @@
     "src/"
   ],
   "dependencies": {
-    "@google-cloud/datastore": "1.3.4",
-    "yargs": "10.0.3"
+    "@google-cloud/datastore": "1.4.0",
+    "yargs": "11.0.0"
   },
   "devDependencies": {
     "eslint": "^4.10.0",

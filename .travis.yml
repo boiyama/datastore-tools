@@ -1,0 +1,12 @@
+language: node_js
+env:
+  global:
+    secure: vI8xiG+pG/57JCfOd+B9AqtHX5EWSJrvM1cZ3bNvqToxB129Sh085Lf5DAMLiGp1G6XPQyjfOR0REZIh0ROwq0Mg3wnjKseAnsbQMAcezgfTGr7JwZu+FwgexNAqG24V85o2JCw5OM4r2T/p3Y7cuCsGkI4/0Kp1bHRK3Xn2Y0BOrKRQ8Hfoxnc0zXpZ4Q//wUwj13qrf2slNf68dVo9r8J03lH2Thl8ASmnS0Q/L5hy5tgckAPSmlW412c5+xUCy4zvzU4Y9ycSCY0NyyQ6deUDrO0pXS2FcQVGE53N5AVpFupUN1A9z3s4pCDm0qKPpz5+9OUYnaiCRsTBNxtTdld2lxzZmCSHHvfOs4wisxYPFeK1m0ES1dLrr7dZ/Y9Ji8wkZU9jxZay8MKQw/zqPBPk5gAxG+xo/hm3Tkz2TFTeI5BpqdqG6JxCUdN/XdxJKgtYPFX/WIARpYi6YeMjTRmN72420jGuLJg0Amcb47hthLNYhCrrMtsvMqD438WL7xorrJd5AqDcW/PsbYU5TlW/a9EsxWMq9EXQYnirat9qSbTQxHSAVx7Fbd5+XoHiQYW7bl2aBf9ROXIl4l1z1w9OnePYfeiHCvF7mFrbK0pQdnut8BTSnWVFdezrwavonbem/++MNhzENjdPy8yMKc1y2xonLTMu+ZjDrksC+PI=
+node_js:
+  - 9
+before_install:
+# package-lock.json was introduced in npm@5
+- '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+- npm install -g greenkeeper-lockfile
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
