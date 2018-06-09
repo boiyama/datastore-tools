@@ -1,5 +1,6 @@
 # Google Cloud Datastore Tools
 
+[![Build Status](https://travis-ci.org/boiyaa/tslint-no-return.svg?branch=master)](https://travis-ci.org/boiyaa/tslint-no-return)
 [![Greenkeeper badge](https://badges.greenkeeper.io/boiyaa/datastore-tools.svg)](https://greenkeeper.io/)
 
 [Cloud Datastore](https://cloud.google.com/datastore/docs) is a NoSQL document database built for automatic scaling, high performance, and ease of application development. While the Cloud Datastore interface has many of the same features as traditional databases, as a NoSQL database it differs from them in the way it describes relationships between data objects.
