@@ -21,7 +21,7 @@
     "src/"
   ],
   "dependencies": {
-    "@google-cloud/datastore": "1.4.1",
+    "@google-cloud/datastore": "4.1.1",
     "yargs": "11.0.0"
   },
   "devDependencies": {
